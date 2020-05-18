@@ -7,8 +7,15 @@ namespace CorreioSanAndreasTest
     public class ControllerTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ExecutarAplicacao()
         {
+
+        }
+
+        [TestMethod]
+        public void ExeutarAplicacaoSemInformarCaminho()
+        {
+
         }
     }
 }

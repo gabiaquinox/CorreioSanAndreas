@@ -9,7 +9,7 @@ namespace CorreioSanAndreas
 {
     public class Controller
     {
-        static readonly string pastaRaiz = @"C:\Users\Gabi\source\repos\Take\";
+        static readonly string pastaRaiz = @"C:\temp\";
         static readonly string arquivoTrechos = @"\trechos.txt";
         static readonly string arquivoEncomendas = @"\encomendas.txt";
 
@@ -26,8 +26,8 @@ namespace CorreioSanAndreas
 
         public void Executar(string caminhoLeitura, string caminhoResultado)
         {
-            var retornoTrechos = LerTxt(string.Format("{0}{1}", caminhoLeitura, arquivoTrechos));
-            var retornoEncomendas = LerTxt(string.Format("{0}{1}", caminhoLeitura, arquivoEncomendas));
+            var retornoTrechos = LerTxt(string.Format("{0}{1}", String.IsNullOrEmpty(caminhoLeitura) ? pastaRaiz : caminhoLeitura, arquivoTrechos));
+            var retornoEncomendas = LerTxt(string.Format("{0}{1}", String.IsNullOrEmpty(caminhoResultado) ? pastaRaiz : caminhoResultado, arquivoEncomendas));
             
             var trajetos = CalcularTrajetos(MapearEncomendas(retornoEncomendas), MapearRotas(retornoTrechos));
 
